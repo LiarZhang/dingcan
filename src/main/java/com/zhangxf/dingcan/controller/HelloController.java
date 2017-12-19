@@ -1,6 +1,5 @@
 package com.zhangxf.dingcan.controller;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,9 +8,10 @@ import com.zhangxf.dingcan.pojo.User;
 
 
 @RestController
+@RequestMapping("/hello")
 public class HelloController {
 
-	@RequestMapping("/h")
+	@RequestMapping("/get")
 	@ResponseBody
 	public User get(){
 		User user=new User();
