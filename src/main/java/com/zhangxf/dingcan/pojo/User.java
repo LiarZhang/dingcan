@@ -1,20 +1,58 @@
 package com.zhangxf.dingcan.pojo;
 
+import java.util.List;
+
+/**
+ * 
+ * @author Zhangxf
+ *
+ */
 public class User {
-	private String username;
-	private String birthday;
+    private Integer id;
+    private String username;
+    private String password;
+  
+    private List<Role> roleList;// 一个用户具有多个角色
+
+    public User() {
+        super();
+    }
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getBirthday() {
-		return birthday;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	
+
+	public List<Role> getRoleList() {
+		return roleList;
+	}
+
+	public void setRoleList(List<Role> roleList) {
+		this.roleList = roleList;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", roleList=" + roleList + "]";
+	}
 	
 }
