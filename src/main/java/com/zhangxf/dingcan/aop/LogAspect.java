@@ -24,7 +24,7 @@ public class LogAspect {
 	private static final Logger LOG = LoggerFactory.getLogger(LogAspect.class);
 	
 	//切入点
-	@Pointcut("execution(public * com.zhangxf.dingcan..*(..))")//两个..代表所有子目录，最后括号里的两个..代表所有参数
+	@Pointcut("execution(public * com.zhangxf.dingcan.controller..*(..))")//两个..代表所有子目录，最后括号里的两个..代表所有参数
 	public void  logPointCut(){
 	}
 	

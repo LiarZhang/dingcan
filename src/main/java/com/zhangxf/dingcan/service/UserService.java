@@ -9,4 +9,5 @@ import com.zhangxf.dingcan.pojo.User;
 */
 public interface UserService {
 	public User findById(int id);
+	public User findByUsername(String username);
 }
