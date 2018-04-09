@@ -30,13 +30,14 @@ public class LogAspect {
 	
 	@Before("logPointCut()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
+		System.out.println("-----------------------<log>---------");
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
         // 记录下请求内容
         LOG.info("请求地址 : " + request.getRequestURL().toString());
-        LOG.info("HTTP METHOD : " + request.getMethod());
+        LOG.info("请求方式HTTP METHOD : " + request.getMethod());
         LOG.info("IP : " + request.getRemoteAddr());
         LOG.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "."
                 + joinPoint.getSignature().getName());

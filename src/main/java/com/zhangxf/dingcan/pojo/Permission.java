@@ -3,29 +3,25 @@ package com.zhangxf.dingcan.pojo;
 public class Permission {
 
 	private Integer id;
-    private String permissionname;
-    private Role role;// 一个权限对应一个角色
+    private String name;
+    private String url;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getPermissionname() {
-		return permissionname;
+	public String getName() {
+		return name;
 	}
-	public void setPermissionname(String permissionname) {
-		this.permissionname = permissionname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public Role getRole() {
-		return role;
+	public String getUrl() {
+		return url;
 	}
-	public void setRole(Role role) {
-		this.role = role;
+	public void setUrl(String url) {
+		this.url = url;
 	}
-	@Override
-	public String toString() {
-		return "Permission [id=" + id + ", permissionname=" + permissionname + ", role=" + role + "]";
-	}
-    
+	
 }

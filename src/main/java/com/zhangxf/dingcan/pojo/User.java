@@ -1,5 +1,6 @@
 package com.zhangxf.dingcan.pojo;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,10 +10,14 @@ import java.util.List;
  */
 public class User {
     private Integer id;
-    private String username;
+    private String nikename;
+    private String email;
     private String password;
+    private Date create_time;
+    private Date last_login_time;
+    private int status;
   
-    private List<Role> roleList;// 一个用户具有多个角色
+   // private List<Role> roleList;// 一个用户具有多个角色
 
     public User() {
         super();
@@ -26,13 +31,6 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 	public String getPassword() {
 		return password;
@@ -42,17 +40,44 @@ public class User {
 		this.password = password;
 	}
 
-	public List<Role> getRoleList() {
-		return roleList;
+	public String getNikename() {
+		return nikename;
 	}
 
-	public void setRoleList(List<Role> roleList) {
-		this.roleList = roleList;
+	public void setNikename(String nikename) {
+		this.nikename = nikename;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", roleList=" + roleList + "]";
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getCreate_time() {
+		return create_time;
+	}
+
+	public void setCreate_time(Date create_time) {
+		this.create_time = create_time;
+	}
+
+	public Date getLast_login_time() {
+		return last_login_time;
+	}
+
+	public void setLast_login_time(Date last_login_time) {
+		this.last_login_time = last_login_time;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 }

@@ -13,9 +13,9 @@ import com.zhangxf.dingcan.pojo.User;
 //
 @Mapper
 public interface UserDao {
-	@Select("select * from t_user where user_id=#{user_id}")
-	public User findById(int user_id);
+	@Select("select * from u_user where id=#{id}")
+	public User findById(int id);
 	
-	@Select("select * from t_user where username=#{username}")
-	public User findByUsername(String username);
+	@Select("select * from u_user where nikename=#{nikename}")
+	public User findByUsername(String nikename);
 }

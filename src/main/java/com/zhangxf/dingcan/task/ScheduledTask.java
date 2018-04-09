@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 */
 @Component
 public class ScheduledTask {
-	@Scheduled(fixedRate = 3000)
+	//@Scheduled(fixedRate = 3000)//关闭
 	public void helloTask(){
 		String date=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		System.out.println("时间:"+date);
