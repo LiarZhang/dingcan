@@ -16,6 +16,6 @@ public interface UserDao {
 	@Select("select * from u_user where id=#{id}")
 	public User findById(int id);
 	
-	@Select("select * from u_user where nikename=#{nikename}")
+	@Select("select * from u_user where nickname=#{nickname}")
 	public User findByUsername(String nikename);
 }

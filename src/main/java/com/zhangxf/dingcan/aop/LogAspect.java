@@ -30,7 +30,7 @@ public class LogAspect {
 	
 	@Before("logPointCut()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
-		System.out.println("-----------------------<log>---------");
+		System.out.println("------------<log>---------");
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();

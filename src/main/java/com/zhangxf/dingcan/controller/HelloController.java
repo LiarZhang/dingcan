@@ -1,65 +1,57 @@
 package com.zhangxf.dingcan.controller;
 
+import java.security.MessageDigest;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zhangxf.dingcan.pojo.User;
-
+import com.zhangxf.dingcan.service.UserService;
 
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
-	private static final Logger LOG = LoggerFactory.getLogger(HelloController.class);
+
+	@Autowired
+	private UserService userService;
+
 	@RequestMapping("/get")
 	@ResponseBody
-	public User get(){
-		User user=new User();
-		user.setId(1);
-		user.setNikename("1998.01.08");
-		user.setStatus(1);
-		user.setEmail("张三@163.com");
-	//	LOG.info("执行helloController");
+	public User get() {
+		User user = userService.findByUsername("soso");
+		System.out.println(user.getNikename());
 		return user;
 	}
-	@RequestMapping(value = "/login")  
-	   public String login(HttpServletRequest request, Model model){ 
-		System.out.println("-------------.>");
-	       String username=request.getParameter("username");  
-	       String password=request.getParameter("password"); 
-	       System.out.println(username+"-------------.>"+password);
-	       if((username!=null && password!=null)){  
-	           UsernamePasswordToken token=new UsernamePasswordToken(username,password);  
-	           System.out.println(username+"-------------.>"+token);
-	           Subject subject= SecurityUtils.getSubject();
-	           System.out.println(subject+"------------1>");
-	           try{  
-	        	   System.out.println(username+"-------------2>"+token);
-	               subject.login(token);  
-	           }catch (AuthenticationException e){  
-	               
-	           }  
-	           if( subject.isAuthenticated()){  
-	               subject.logout();  
-	               System.out.println("认证成功");  
-	               model.addAttribute("username",username);  
-	               return "/loginsuccess";  
-	           }else {  
-	              // model.addAttribute("exception",customException.getMessage());  
-	               return "/refuse";  
-	           }  
-	       }  
-	       return "login";  
-	   }  
+
 	
+
+	/**
+	 * MD5加密
+	 */
+	public static String MD5(String key) {
+		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+		try {
+			byte[] btInput = key.getBytes();
+			// 获得MD5摘要算法的 MessageDigest 对象
+			MessageDigest mdInst = MessageDigest.getInstance("MD5");
+			// 使用指定的字节更新摘要
+			mdInst.update(btInput);
+			// 获得密文
+			byte[] md = mdInst.digest();
+			// 把密文转换成十六进制的字符串形式
+			int j = md.length;
+			char str[] = new char[j * 2];
+			int k = 0;
+			for (int i = 0; i < j; i++) {
+				byte byte0 = md[i];
+				str[k++] = hexDigits[byte0 >>> 4 & 0xf];
+				str[k++] = hexDigits[byte0 & 0xf];
+			}
+			return new String(str);
+		} catch (Exception e) {
+			return null;
+		}
+	}
 }
