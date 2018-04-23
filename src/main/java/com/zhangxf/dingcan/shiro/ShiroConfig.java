@@ -1,7 +1,5 @@
 package com.zhangxf.dingcan.shiro;
 
-
-
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -51,15 +49,15 @@ public class ShiroConfig {
 	public HashedCredentialsMatcher hashedCredentialsMatcher(){
 		HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
 		hashedCredentialsMatcher.setHashAlgorithmName("MD5");//散列算法:这里使用MD5算法;
-		hashedCredentialsMatcher.setHashIterations(1);//散列的次数，比如散列两次，相当于 md5(md5(""));
+		hashedCredentialsMatcher.setHashIterations(1024);//散列的次数，比如散列两次，相当于 md5(md5(""));
 		return hashedCredentialsMatcher;
 	}
 
 	@Bean
 	public CustomRealm myShiroRealm(){
 		CustomRealm myShiroRealm = new CustomRealm();
-		//密码暂时不进行加密
-		//myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+		
+		//myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());//密码暂时不进行加密
 		return myShiroRealm;
 	}
 

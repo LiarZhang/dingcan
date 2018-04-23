@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.zhangxf.dingcan.utils.MD5Util;
 @Controller
 public class LoginController {
 	private static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
@@ -21,8 +23,10 @@ public class LoginController {
 		String username = request.getParameter("username");
 		username = "soso";
 		String password = request.getParameter("password");
-		//password = MD5("123456");
-		password = "123456";
+		password = MD5Util.MD5("123456");
+		//password = "123456";
+		System.out.println(password);
+		
 		if ((username != null && password != null)) {
 			UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());
 			Subject subject = SecurityUtils.getSubject();
