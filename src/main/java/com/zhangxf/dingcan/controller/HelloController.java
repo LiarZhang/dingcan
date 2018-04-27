@@ -19,7 +19,7 @@ public class HelloController {
 	@ResponseBody
 	public User get() {
 		User user = userService.findByUsername("soso");
-		System.out.println(user.getNikename());
+		System.out.println(1/0);
 		return user;
 	}
 

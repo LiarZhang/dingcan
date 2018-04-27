@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -30,7 +31,6 @@ public class LogAspect {
 	
 	@Before("logPointCut()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
-		System.out.println("------------<log>---------");
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -57,5 +57,23 @@ public class LogAspect {
         Object ob = pjp.proceed();// ob 为方法的返回值
         LOG.info("耗时 : " + (System.currentTimeMillis() - startTime));
         return ob;
+    }
+    /**
+     *  异常通知 记录操作报错日志
+     * @param joinPoint
+     * @param e
+     */
+    @AfterThrowing(pointcut = "logPointCut()", throwing = "e")  
+    public  void doAfterThrowing(JoinPoint joinPoint, Throwable e) {
+    	StringBuffer sb=new StringBuffer();
+    	sb.append(e.toString()).append("\n");
+    	for (int i = 0; i < e.getStackTrace().length; i++) {
+			if(i<5){
+				sb.append("     "+"at  ");
+	    		sb.append(e.getStackTrace()[i]);
+				sb.append("\n");
+			}
+		}
+    	LOG.info("异常:"+sb.toString());
     }
 }
