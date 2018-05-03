@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-@Aspect
+//@Aspect关闭切面
 @Component
 public class LogAspect {
 	
