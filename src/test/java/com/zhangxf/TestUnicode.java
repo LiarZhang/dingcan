@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan;
+package com.zhangxf;
 import java.io.UnsupportedEncodingException;
 public class TestUnicode {
 

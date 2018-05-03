@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan;
+package com.zhangxf;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

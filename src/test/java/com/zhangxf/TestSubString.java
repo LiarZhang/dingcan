@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan;
+package com.zhangxf;
 
 public class TestSubString {
 

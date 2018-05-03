@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan;
+package com.zhangxf;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
