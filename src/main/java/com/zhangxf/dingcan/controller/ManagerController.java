@@ -23,5 +23,15 @@ public class ManagerController {
 		return user;
 	}
 
+	@RequestMapping("/post")
+	@ResponseBody
+	public Manager post() {
+		
+		Manager manager = new Manager();
+		manager.setName("zhangsan");
+		manager.setEmail("2532466428@");
+		managerService.insert(manager);
+		return manager;
+	}
 	
 }

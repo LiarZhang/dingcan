@@ -5,4 +5,6 @@ import com.zhangxf.dingcan.pojo.Manager;
 public interface ManagerService {
 
 	public Manager findById(int id);
+	
+	public void insert(Manager manager);
 }
