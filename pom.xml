@@ -86,6 +86,12 @@
 		    <artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 	   
+	   <!-- AMQP模块就可以很好的支持RabbitMQ -->
+	   <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+      </dependency>
+	   
 	</dependencies>
 
 	<build>
@@ -94,7 +100,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- GeneratorConfig -->
+			<!-- GeneratorConfig生成pojo、mapper、xml -->
 			<plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>

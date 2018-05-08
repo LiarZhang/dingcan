@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.zhangxf.dingcan.common.rabbitmq.Sender;
 import com.zhangxf.dingcan.task.AsyncTask;
 import com.zhangxf.dingcan.task.SynchronizedTask;
 
@@ -15,6 +16,9 @@ import com.zhangxf.dingcan.task.SynchronizedTask;
 @SpringBootTest
 public class DingcanApplicationTests {
 
+	@Autowired
+    private Sender sender;
+	
 	@Autowired
 	private SynchronizedTask synchronizedTask;
 	
@@ -50,6 +54,12 @@ public class DingcanApplicationTests {
 
 		System.out.println("任务全部完成，总耗时：" + (end - start) + "毫秒");
 
+	}
+	
+	
+	@Test
+	public void testRabbitMQ()throws Exception {
+		sender.send();
 	}
 
 }
