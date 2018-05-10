@@ -56,9 +56,9 @@ public class SendSimpleMail {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 
 		MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-		helper.setFrom("mr_zxf0105@163.com");
+		helper.setFrom("2532466427@qq.com");
 		helper.setTo("mr_zxf0105@163.com");
-		helper.setSubject("主题：有附件");
+		helper.setSubject("主题：有附件qq发送到163");
 		helper.setText("有附件的邮件");
 
 		FileSystemResource file = new FileSystemResource(new File("C:/Users/Liar/Desktop/file/tit.png"));
