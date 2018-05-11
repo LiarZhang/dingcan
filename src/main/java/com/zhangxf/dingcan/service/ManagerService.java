@@ -7,4 +7,7 @@ public interface ManagerService {
 	public Manager findById(int id);
 	
 	public void insert(Manager manager);
+	
+	public void update(Manager manager);
+	
 }

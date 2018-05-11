@@ -34,4 +34,15 @@ public class ManagerController {
 		return manager;
 	}
 	
+	@RequestMapping("/put")
+	@ResponseBody
+	public Manager put() {
+		
+		Manager manager = new Manager();
+		manager.setId(1);
+		manager.setEmail("2532466428@222222");
+		managerService.update(manager);
+		return manager;
+	}
+	
 }

@@ -1,6 +1,9 @@
 # dingcan
 
 ####1.0.2
+cache加入缓存
+
+####1.0.2
 springboot集成RabbitMQ
 
 ####1.0.1
