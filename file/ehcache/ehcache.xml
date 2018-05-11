@@ -1,9 +1,9 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="ehcache.xsd">
-
-    <cache name="Manager"
+   <!-- 启动ehcache缓存   实现原理Spring aop -->
+   <!--  <cache name="Manager"
            maxEntriesLocalHeap="200"
            timeToLiveSeconds="600">
-    </cache>
+    </cache> -->
 
 </ehcache> 

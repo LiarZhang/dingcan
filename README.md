@@ -1,7 +1,12 @@
 # dingcan
 
-####1.0.2
-cache加入缓存
+
+
+####1.0.4
+cache缓存改造，使用Redis  删除ehcache.xml文件  
+
+####1.0.3
+cache加入缓存    添加ehcache.xml文件
 
 ####1.0.2
 springboot集成RabbitMQ

@@ -12,23 +12,32 @@ import com.zhangxf.dingcan.dao.ManagerMapper;
 import com.zhangxf.dingcan.pojo.Manager;
 import com.zhangxf.dingcan.service.ManagerService;
 
+
+@CacheConfig(cacheNames = "Manager")
 @Service
 public class ManagerServiceImpl implements ManagerService{
 
-	//这里的单引号不能少，否则会报错，被识别是一个对象;  
-    public static final String CACHE_KEY = "'manager'";  
 	
 	@Autowired
 	private ManagerMapper managerMapper;
-	
-	@Override
+	//下面两个使用的ehcache缓存
+	/*@Override
 	//@Cacheable(value="Manager",key="'manager_'+#id")
 	@Cacheable(value="Manager",key="#id")
 	public Manager findById(int id) {
 		Manager manager=managerMapper.selectByPrimaryKey(id);
-		System.out.println("--------");
 		return manager;
 	}
+	
+	@Override
+	//@CachePut(value="Manager",key="'manager_'+#manager.getId()")
+	@CacheEvict(value="Manager",key="#manager.getId()" )
+	//CacheEvict主要针对方法配置，能够根据一定的条件对缓存进行清空
+	public void update(Manager manager) {
+		managerMapper.updateByPrimaryKeySelective(manager);
+	}*/
+	
+	
 
 	//测试事物回滚 
 	//注意@Transactional只能被应用到public方法上，
@@ -48,12 +57,20 @@ public class ManagerServiceImpl implements ManagerService{
 		
 	}
 
+
+	//使用Redis缓存
+
 	@Override
-	//@CachePut(value="Manager",key="'manager_'+#manager.getId()")
-	@CacheEvict(value="Manager",key="#manager.getId()" )
+	@Cacheable(value="Manager",key="#id")
+	public Manager findById(int id) {
+		System.out.println("--------");
+		return managerMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	@CachePut(value="Manager",key="#manager.getId()")
 	public void update(Manager manager) {
 		managerMapper.updateByPrimaryKeySelective(manager);
 	}
-
 	
 }

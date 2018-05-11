@@ -25,10 +25,10 @@
 	</properties>
 
 	<dependencies>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency> -->
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -92,15 +92,16 @@
         <artifactId>spring-boot-starter-amqp</artifactId>
       </dependency>
 	   
-	   <!-- cache缓存 -->
+	   
 	   <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
-	    <dependency>
+		<!-- cache缓存    改造使用redis-->
+	    <!-- <dependency>
 		    <groupId>net.sf.ehcache</groupId>
 		    <artifactId>ehcache</artifactId>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
