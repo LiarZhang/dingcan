@@ -1,6 +1,7 @@
 # dingcan
 
-
+####1.0.5
+websocket 添加三个js文件
 
 ####1.0.4
 cache缓存改造，使用Redis  删除ehcache.xml文件  
