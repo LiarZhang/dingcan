@@ -1,5 +1,8 @@
 # dingcan
 
+####1.0.6 2018.5.30
+引入PageHelper分页工具和tkmapper通用mappper
+
 ####1.0.5
 websocket 添加三个js文件
 
