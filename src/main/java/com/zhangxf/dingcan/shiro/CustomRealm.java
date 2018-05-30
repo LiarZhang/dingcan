@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 import com.zhangxf.dingcan.pojo.User;
 import com.zhangxf.dingcan.service.UserService;
 
-@Component
+//@Component
 public class CustomRealm extends AuthorizingRealm {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(CustomRealm.class);

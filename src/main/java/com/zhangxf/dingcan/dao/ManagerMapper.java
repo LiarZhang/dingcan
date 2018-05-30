@@ -1,8 +1,6 @@
 package com.zhangxf.dingcan.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
 
 import com.zhangxf.dingcan.pojo.Manager;
 
