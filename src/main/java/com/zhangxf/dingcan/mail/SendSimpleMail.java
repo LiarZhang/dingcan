@@ -79,7 +79,7 @@ public class SendSimpleMail {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 
 		MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-		helper.setFrom("mr_zxf0105@163.com");
+		helper.setFrom("2532466427@qq.com");
 		helper.setTo("mr_zxf0105@163.com");
 		helper.setSubject("主题：嵌入静态资源");
 		//这里需要注意的是addInline函数中资源名称weixin需要与正文中cid:weixin对应起来
@@ -103,7 +103,7 @@ public class SendSimpleMail {
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 
 		MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-		helper.setFrom("mr_zxf0105@163.com");
+		helper.setFrom("2532466427@qq.com");
 		helper.setTo("mr_zxf0105@163.com");
 		helper.setSubject("主题：模板邮件");
 
