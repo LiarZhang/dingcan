@@ -17,5 +17,6 @@ public class ScheduledTask {
 	public void helloTask(){
 		String date=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		System.out.println("时间:"+date);
+		System.out.println("Thread-id=" + Thread.currentThread().getId() + " ThreadName=" + Thread.currentThread().getName() + " : 定时任务...");
 	}
 }
