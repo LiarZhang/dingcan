@@ -1,5 +1,8 @@
 # dingcan
 
+####1.0.7 2018.7.17
+引入Swagger
+
 ####1.0.6 2018.5.30
 引入PageHelper分页工具和tkmapper通用mappper
 

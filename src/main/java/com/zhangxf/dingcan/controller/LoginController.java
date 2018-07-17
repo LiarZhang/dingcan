@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan.controller;
+/*package com.zhangxf.dingcan.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,3 +46,4 @@ public class LoginController {
 		return "login";
 	}
 }
+*/

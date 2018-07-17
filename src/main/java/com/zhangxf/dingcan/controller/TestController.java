@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan.controller;
+/*package com.zhangxf.dingcan.controller;
 
 import java.util.List;
 
@@ -32,3 +32,4 @@ public class TestController {
 	}
 	
 }
+*/

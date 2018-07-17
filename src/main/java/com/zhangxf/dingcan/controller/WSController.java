@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan.controller;
+/*package com.zhangxf.dingcan.controller;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -18,3 +18,4 @@ public class WSController {
         return new ResponseMessage("welcome," + msg.getMessage() + " !");
     }
 }
+*/

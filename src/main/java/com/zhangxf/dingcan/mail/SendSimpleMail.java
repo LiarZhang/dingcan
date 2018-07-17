@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan.mail;
+/*package com.zhangxf.dingcan.mail;
 
 import java.io.File;
 import java.util.Map;
@@ -31,10 +31,10 @@ public class SendSimpleMail {
 	
 	@Autowired
 	private FreeMarkerConfigurer freeMarkerConfigurer;  //自动注入FreeMarker模版
-	/**
+	*//**
 	 * 发送简单邮件
 	 * @throws Exception
-	 */
+	 *//*
 	@Test
 	@Bean
 	public void sendSimpleMail() throws Exception {
@@ -46,10 +46,10 @@ public class SendSimpleMail {
 
 		mailSender.send(message);
 	}
-	/**
+	*//**
 	 * 附件邮箱
 	 * @throws Exception
-	 */
+	 *//*
 	@Test
 	public void sendAttachmentsMail() throws Exception {
 
@@ -69,10 +69,10 @@ public class SendSimpleMail {
 
 	}
 	
-	/**
+	*//**
 	 * 引入静态资源的邮箱
 	 * @throws Exception
-	 */
+	 *//*
 	@Test
 	public void sendInlineMail() throws Exception {
 
@@ -92,11 +92,11 @@ public class SendSimpleMail {
 
 	}
 	
-	/**
+	*//**
 	 * 模版邮件
 	 * freemarker
 	 * @throws Exception
-	 */
+	 *//*
 	@Test
 	public void sendTemplateMail() throws Exception {
 
@@ -117,3 +117,4 @@ public class SendSimpleMail {
 		mailSender.send(mimeMessage);
 	}
 }
+*/
