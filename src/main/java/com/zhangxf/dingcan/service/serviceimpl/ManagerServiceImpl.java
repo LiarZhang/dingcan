@@ -2,7 +2,7 @@ package com.zhangxf.dingcan.service.serviceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
+//import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -61,16 +61,23 @@ public class ManagerServiceImpl implements ManagerService{
 	//使用Redis缓存
 
 	@Override
-	@Cacheable(value="Manager",key="#id")
-	public Manager findById(int id) {
+	//@Cacheable(value="Manager",key="#id.toString()")
+	@Cacheable(value="Manager", keyGenerator = "keyGenerator")
+	public Manager findById(String id) {
 		System.out.println("--------");
 		return managerMapper.selectByPrimaryKey(id);
 	}
 
 	@Override
-	@CachePut(value="Manager",key="#manager.getId()")
-	public void update(Manager manager) {
+	@CachePut(value="Manager",key="#root.caches[0].name + ':' + #manager.getId()")
+	//#root.caches[0].name:当前被调用方法所使用的Cache, 即"Manager"
+	//@CachePut(value="Manager", keyGenerator = "keyGenerator")
+	//@CachePut指定了key属性之后，则不会再调用keygenerator的方法
+	public Manager update(Manager manager) {
+		
 		managerMapper.updateByPrimaryKeySelective(manager);
+		
+		return managerMapper.selectByPrimaryKey(manager.getId());
 	}
 	
 }

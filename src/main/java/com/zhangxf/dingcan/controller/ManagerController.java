@@ -22,29 +22,24 @@ public class ManagerController {
 	
 	@GetMapping
 	@ApiOperation(value="查询管理用户")
-	public Manager get() {
-		Manager user = managerService.findById(1);
+	public Manager get(String id) {
+		
+		Manager user = managerService.findById(id);
 		return user;
 	}
 
 	@PostMapping
 	@ApiOperation(value="添加管理用户")
-	public Manager post() {
+	public Manager post(Manager manager) {
 		
-		Manager manager = new Manager();
-		manager.setName("zhangsan");
-		manager.setEmail("2532466428@");
 		managerService.insert(manager);
 		return manager;
 	}
 	
 	@PutMapping
 	@ApiOperation(value="更新用户信息")
-	public Manager put() {
+	public Manager put(Manager manager) {
 		
-		Manager manager = new Manager();
-		manager.setId(1);
-		manager.setEmail("2532466428@222222");
 		managerService.update(manager);
 		return manager;
 	}

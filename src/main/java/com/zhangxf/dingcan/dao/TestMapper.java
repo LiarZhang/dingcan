@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.zhangxf.dingcan.common.tkmapper.TkMapper;
 import com.zhangxf.dingcan.pojo.Test;
+
 @Mapper
-public interface TestMapper extends TkMapper<Test>{
-   /* int deleteByPrimaryKey(Integer id);
+public interface TestMapper  {
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Test record);
 
@@ -18,7 +18,7 @@ public interface TestMapper extends TkMapper<Test>{
 
     int updateByPrimaryKeySelective(Test record);
 
-    int updateByPrimaryKey(Test record);*/
+    int updateByPrimaryKey(Test record);
     
     List<Test> getList();
 }

@@ -1,7 +1,6 @@
 package com.zhangxf.dingcan.pojo;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * 

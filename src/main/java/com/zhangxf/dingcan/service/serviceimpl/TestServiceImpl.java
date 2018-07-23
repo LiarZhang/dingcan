@@ -25,7 +25,17 @@ public class TestServiceImpl implements TestService {
 	@Override
 	public List<Test> getList() {
 		PageHelper.offsetPage(0, 5);
-		return testMapper.selectAll();
+		return testMapper.getList();
+	}
+
+	@Override
+	public Test findById(int id) {
+		return testMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public int update(Test test) {
+		return testMapper.updateByPrimaryKeySelective(test);
 	}
 
 }
