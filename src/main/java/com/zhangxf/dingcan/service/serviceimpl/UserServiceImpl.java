@@ -3,7 +3,7 @@ package com.zhangxf.dingcan.service.serviceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zhangxf.dingcan.dao.UserDao;
+import com.zhangxf.dingcan.mapper.UserDao;
 import com.zhangxf.dingcan.pojo.User;
 import com.zhangxf.dingcan.service.UserService;
 

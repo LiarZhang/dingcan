@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : shop
+Source Server         : 本地Localhost
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : shiro_dingcan
@@ -10,10 +10,74 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-23 15:56:10
+Date: 2018-07-25 09:32:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for manager
+-- ----------------------------
+DROP TABLE IF EXISTS `manager`;
+CREATE TABLE `manager` (
+  `id` varchar(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of manager
+-- ----------------------------
+INSERT INTO `manager` VALUES ('1', '1111', '111', '111@333.com', '1111', '女');
+INSERT INTO `manager` VALUES ('2', '1111', '111', '111@333.com', '1111', '女');
+INSERT INTO `manager` VALUES ('3', '1111', '111', '111@333.com', '1111', '女');
+
+-- ----------------------------
+-- Table structure for test
+-- ----------------------------
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of test
+-- ----------------------------
+INSERT INTO `test` VALUES ('3', 'name0', null, null);
+INSERT INTO `test` VALUES ('4', 'name1', null, null);
+INSERT INTO `test` VALUES ('5', 'name2', null, null);
+INSERT INTO `test` VALUES ('6', 'name3', null, null);
+INSERT INTO `test` VALUES ('7', 'name4', null, null);
+INSERT INTO `test` VALUES ('8', 'name5', null, null);
+INSERT INTO `test` VALUES ('9', 'name6', null, null);
+INSERT INTO `test` VALUES ('10', 'name7', null, null);
+INSERT INTO `test` VALUES ('11', 'name8', null, null);
+INSERT INTO `test` VALUES ('12', '张销峰1', '1111', '男1');
+
+-- ----------------------------
+-- Table structure for test_user
+-- ----------------------------
+DROP TABLE IF EXISTS `test_user`;
+CREATE TABLE `test_user` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `user_password` varchar(255) DEFAULT NULL,
+  `user_sex` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of test_user
+-- ----------------------------
+INSERT INTO `test_user` VALUES ('1', '11', '11', '11');
 
 -- ----------------------------
 -- Table structure for u_permission
@@ -122,14 +186,16 @@ CREATE TABLE `u_user` (
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   `status` bigint(1) DEFAULT '1' COMMENT '1:有效，0:禁止登录',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of u_user
 -- ----------------------------
 INSERT INTO `u_user` VALUES ('1', '管理员', 'admin', '57eb72e6b78a87a12d46a7f5e9315138', '2016-06-16 11:15:33', '2018-03-29 17:34:30', '1');
-INSERT INTO `u_user` VALUES ('11', 'soso', '8446666@qq.com', '123456', '2016-05-26 20:50:54', '2016-06-16 11:24:35', '1');
+INSERT INTO `u_user` VALUES ('11', 'soso', '8446666@qq.com', 'E10ADC3949BA59ABBE56E057F20F883E', '2016-05-26 20:50:54', '2016-06-16 11:24:35', '1');
 INSERT INTO `u_user` VALUES ('12', '8446666', '8446666', '4afdc875a67a55528c224ce088be2ab8', '2016-05-27 22:34:19', '2016-06-15 17:03:16', '1');
+INSERT INTO `u_user` VALUES ('14', '管理员1111', 'admin', '57eb72e6b78a87a12d46a7f5e9315138', '2016-06-16 11:15:33', '2018-03-29 17:34:30', '1');
+INSERT INTO `u_user` VALUES ('15', '管理员', 'admin', '57eb72e6b78a87a12d46a7f5e9315138', '2016-06-16 11:15:33', '2018-03-29 17:34:30', '1');
 
 -- ----------------------------
 -- Table structure for u_user_role

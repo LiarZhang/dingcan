@@ -8,14 +8,14 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.zhangxf.dingcan.dao.ManagerMapper;
+import com.zhangxf.dingcan.mapper.ManagerMapper;
 import com.zhangxf.dingcan.pojo.Manager;
 import com.zhangxf.dingcan.service.ManagerService;
 
 
 @CacheConfig(cacheNames = "Manager")
 @Service
-public class ManagerServiceImpl implements ManagerService{
+public class ManagerServiceImpl  /*extends BaseService<Manager>*/ implements ManagerService {
 
 	
 	@Autowired

@@ -1,11 +1,11 @@
-package com.zhangxf.dingcan.dao;
+package com.zhangxf.dingcan.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.zhangxf.dingcan.common.tkmapper.TkMapper;
+import com.zhangxf.dingcan.common.base.BaseMapper;
 import com.zhangxf.dingcan.pojo.Manager;
 @Mapper
-public interface ManagerMapper extends TkMapper<Manager> {
+public interface ManagerMapper extends BaseMapper<Manager> {
    /* int deleteByPrimaryKey(String id);
 
     int insert(Manager record);

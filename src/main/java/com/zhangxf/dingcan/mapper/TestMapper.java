@@ -1,4 +1,4 @@
-package com.zhangxf.dingcan.dao;
+package com.zhangxf.dingcan.mapper;
 
 import java.util.List;
 
